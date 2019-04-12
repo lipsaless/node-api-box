@@ -16,7 +16,7 @@ routes.get('/users/:id', UserController.show);
 // boxes
 routes.get('/boxes', BoxController.getAll);
 routes.post(
-  '/users/:id/boxes',
+  '/boxes',
   multer(multerConfig).single('box'),
   BoxController.store
 );
