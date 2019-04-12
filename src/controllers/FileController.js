@@ -18,6 +18,10 @@ class FileController {
 
     return res.send(file);
   }
+
+  async delete(req, res) {
+    const box = await Box.findById(req)
+  }
 }
 
 module.exports = new FileController();
