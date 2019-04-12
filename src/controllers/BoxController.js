@@ -1,19 +1,11 @@
-const User = require('../models/User');
 const Box = require('../models/Box');
 
 class BoxController {
-  async getAll(req, res) {
-    const boxes = await Box.find({});
-
-    return res.json(boxes);
-  }
-
   async store(req, res) {
+    
     const box = await Box.create(req.body);
 
-    req.io.sockets.in(user._id).emit('box', file);
-
-    return res.send(box);
+    return res.json(box);
   }
 
   async show(req, res) {
@@ -23,12 +15,6 @@ class BoxController {
     });
 
     return res.json(box);
-  }
-
-  async delete(req, res) {
-    await Box.remove(req.params.id);
-
-    return res.json('Pasta excluída.');
   }
 }
 
